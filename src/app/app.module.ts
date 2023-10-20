@@ -9,6 +9,19 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { ChatComponent } from './components/chat/chat.component';
 import { MatchComponent } from './components/match/match.component';
 import { PrifleDisplayComponent } from './components/prifle-display/prifle-display.component';
+import { MessageComponent } from './components/message/message.component';
+import { FirestoreModule } from '@angular/fire/firestore';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatListModule } from '@angular/material/list';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatDividerModule } from '@angular/material/divider';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,13 +29,29 @@ import { PrifleDisplayComponent } from './components/prifle-display/prifle-displ
     LoginComponent,
     HomeComponent,
     ProfileComponent,
-    ChatComponent,
     MatchComponent,
-    PrifleDisplayComponent
+    PrifleDisplayComponent,
+    MessageComponent,
+    ChatComponent
+
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    FirestoreModule,
+    ReactiveFormsModule,
+    // Angular Material imports
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatMenuModule,
+    MatListModule,
+    MatAutocompleteModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
