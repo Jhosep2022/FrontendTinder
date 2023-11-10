@@ -1,0 +1,25 @@
+<div class="perfil">
+  <img src="assets/coss.jpg" alt="Jose Condori">
+  <h2>Coss Adriana</h2>
+</div>
+
+<div class="menu">
+  <div class="btn-group" role="group">
+    <button type="button" class="btn btn-outline-secondary menu-item"
+            [ngClass]="{'active': view === 'Match'}"
+            (click)="view = 'Match'">Match</button>
+    <button type="button" class="btn btn-outline-secondary menu-item"
+            [ngClass]="{'active': view === 'Chat'}"
+            (click)="view = 'Chat'">Chat</button>
+  </div>
+
+  <!-- Match View -->
+  <div *ngIf="view === 'Match'" class="content">
+    <app-match></app-match>
+  </div>
+
+  <!-- Chat View -->
+  <div *ngIf="view === 'Chat'" class="content">
+    <app-chat></app-chat>
+  </div>
+</div>

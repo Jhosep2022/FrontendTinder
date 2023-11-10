@@ -1,1 +1,34 @@
-<p>message works!</p>
+<div class="container">
+
+  <div class="chat-window mat-elevation-z5">
+    <div class="chat-header">
+      <img
+        class="chat-avatar"
+        [src]="chatPic ? chatPic : 'assets/images/image-placeholder.png'"
+      />
+      <span class="chat-name">{{ chatName }}</span>
+    </div>
+
+    <div class="chat-body">
+      <div class="message" *ngFor="let message of messages$ | async">
+        <div class="message-content">
+          <p class="message-text">{{ message.message }}</p>
+          <p class="message-date">{{ message.date | date: 'short' }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-footer">
+      <mat-form-field class="full-width">
+        <input
+          matInput
+          placeholder="Write a message"
+          [formControl]="messageControl"
+        />
+      </mat-form-field>
+      <button mat-icon-button>
+        <mat-icon>send</mat-icon>
+      </button>
+    </div>
+
+</div>

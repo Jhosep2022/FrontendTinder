@@ -1,20 +1,15 @@
 .app-container {
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  font-family: Arial, sans-serif;
+  display: flex; /* Define la estructura como flexible */
 }
 
 .sidebar {
-  width: 30%;
-  background-color: #f3f3f3;
-  padding: 1rem;
-  overflow-y: auto;
+  flex: 0.5; /* Ocupará la mitad del espacio disponible */
+  max-width: 60%; /* Limita al 50% del ancho total */
+  min-width: 350px; /* Ancho mínimo, ajusta según tus necesidades */
+  overflow-y: auto; /* Barra de desplazamiento vertical en caso de contenido largo */
 }
 
 .profile-display {
-  flex: 1;
-  background-color: #fff;
-  padding: 2rem;
-  position: relative;
+  flex: 1; /* Ocupará el espacio restante después de sidebar */
+  overflow-y: auto; /* Barra de desplazamiento vertical en caso de contenido largo */
 }

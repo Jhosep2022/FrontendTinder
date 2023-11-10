@@ -1,0 +1,17 @@
+
+.app-container {
+  display: flex;
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+}
+
+.sidebar {
+  flex: 0.3; /* Ocupa el 30% del espacio disponible */
+  min-width: 350px; /* Puede ajustar según tus necesidades */
+  overflow-y: auto;
+  border-right: 1px solid #bd0f0f; /* Opcional: una línea divisoria entre el menú y el perfil */
+}
+
+.profile-display {
+  flex: 0.7; /* Ocupa el 70% del espacio disponible */
+  overflow-y: auto;
+}

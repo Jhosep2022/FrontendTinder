@@ -22,6 +22,8 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatDividerModule } from '@angular/material/divider';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MenuLateralComponent } from './components/menu-lateral/menu-lateral.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -29,12 +31,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginComponent,
     HomeComponent,
     ProfileComponent,
+    ChatComponent,
     MatchComponent,
     PrifleDisplayComponent,
     MessageComponent,
-    ChatComponent
-
-
+    MenuLateralComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
