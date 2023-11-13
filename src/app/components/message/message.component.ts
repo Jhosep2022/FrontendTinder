@@ -1,33 +1,50 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable, of } from 'rxjs';
-import { Message } from 'src/app/models/chat';
-import { ProfileUser } from 'src/app/models/profile-user';
-import { OnInit } from '@angular/core';
+import { map } from 'rxjs/operators';
+import { Chat } from 'src/app/models/chat';
+import { Message } from 'src/app/models/message';
 
 @Component({
   selector: 'app-message',
   templateUrl: './message.component.html',
   styleUrls: ['./message.component.css']
 })
-
-export class MessageComponent {
-  chatPic: string = 'ruta/a/tu/imagen';
-  chatName: string = 'Nombre del chat';
+export class MessageComponent implements OnInit {
+  @Input() chat: Chat | null = null;
   messageControl = new FormControl('');
-  messages$: Observable<{ message: string, date: Date }[]> = of([
-    {
-      message: 'Hola, ¿cómo estás?',
-      date: new Date()
-    },
-    // ... otros mensajes
-  ]);
+  messages$: Observable<Message[]>;
 
-  sendMessage() {
-    if (this.messageControl.value) {
-      // Tu lógica para enviar el mensaje y/o agregarlo a la lista de mensajes
-      console.log('Mensaje enviado:', this.messageControl.value);
+  constructor() {
+    this.messages$ = of([]);
+  }
+
+  ngOnInit(): void {
+    if (this.chat) {
+      this.messages$ = of(this.chat.messages);
+    }
+  }
+
+  sendMessage(): void {
+    if (this.messageControl.value && this.chat) {
+      const newMessage: Message = {
+        text: this.messageControl.value,
+        senderId: 'currentUserId',
+        sentDate: new Date()
+      };
+
+      this.messages$ = this.messages$.pipe(
+        map((messages: Message[]) => [...messages, newMessage])
+      );
+
+      console.log('Message sent:', newMessage);
       this.messageControl.reset();
     }
   }
+
+    isSentByCurrentUser(message: Message): boolean {
+      const currentUserId = 'yourCurrentUserId';
+      return message.senderId === currentUserId;
+    }
+
 }

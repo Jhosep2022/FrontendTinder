@@ -1,0 +1,55 @@
+.profile-container {
+  width: 80%;
+  max-width: 400px;
+  background-color: white;
+  overflow-y: auto; /* Permite el scroll vertical si es necesario */
+  overflow-x: hidden; /* Elimina el scroll horizontal */
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: auto; /* Centrar el contenedor si es más pequeño que el espacio asignado */
+}
+
+.profile-header {
+  position: relative;
+  margin-bottom: 20px; /* Espacio para el contenido debajo */
+}
+
+.profile-pic {
+  width: 100%; /* Hace que la imagen se extienda por todo el ancho del contenedor */
+  display: block; /* Elimina el espacio extra bajo la imagen */
+  border-radius: 0; /* La imagen ya no es redonda */
+}
+
+.profile-info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente para el texto */
+  color: white;
+  padding: 10px; /* Espaciado para el texto */
+  text-align: center; /* Texto centrado */
+}
+
+.verified-icon {
+  font-size: 0.8em;
+  color: #56a5eb; /* O el color que prefieras para el ícono verificado */
+}
+
+.edit-profile-btn {
+  background-color: #ff4b5a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.profile-content {
+  padding: 20px;
+}
+
+.profile-scroll {
+  max-height: 300px; /* O la altura que prefieras */
+  overflow-y: auto; /* Permite el scroll vertical si el contenido es más largo que la altura del contenedor */
+}

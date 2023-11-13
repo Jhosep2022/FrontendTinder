@@ -1,25 +1,14 @@
 <div class="chat-container">
   <div class="chat-sidebar">
-      <div class="user-list">
-          <div class="user">
-              <img src="assets/coss.jpg" alt="Nombre del usuario">
-              <div class="user-details">
-                  <h5>Nombre del usuario</h5>
-                  <p>Último mensaje...</p>
-              </div>
-          </div>
+    <div class="user-list">
+      <div *ngFor="let chat of chats" class="user" (click)="setActiveChat(chat)">
+        <img [src]="chat.pic" alt="{{ chat.name }}" class="user-image">
+        <div class="user-details">
+          <h5>{{ chat.chatName || chat.name }}</h5>
+          <p *ngIf="chat.lastMessage">{{ chat.lastMessage }}</p>
+          <small *ngIf="chat.lastMessageDate">{{ chat.lastMessageDate | date: 'short' }}</small>
+        </div>
       </div>
-  </div>
-</div>
-
-
-<!-- <div class="user-list">
-  <div *ngFor="let user of users" class="user" (click)="setActiveChat(user)">
-    <img src="{{ user.imagePath }}" alt="{{ user.name }}">
-    <div class="user-details">
-      <h5>{{ user.name }}</h5>
-      <p>{{ user.lastMessage }}</p>
     </div>
   </div>
-</div> -->
-
+</div>

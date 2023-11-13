@@ -1,20 +1,16 @@
-import { Timestamp } from '@angular/fire/firestore';
+// chat.model.ts
 import { ProfileUser } from './profile-user';
+import { Message } from './message';
 
 export interface Chat {
   id: string;
+  name?: string;
+  pic?: string;
   lastMessage?: string;
-  lastMessageDate?: Date ;
+  lastMessageDate?: Date;
   userIds: string[];
   users: ProfileUser[];
-
-  // Not stored, only for display
-  chatPic?: string;
-  chatName?: string;
-}
-
-export interface Message {
-  text: string;
-  senderId: string;
-  sentDate: Date ;
+  messages: Message[]; // Including messages directly in the chat model
+  chatPic?: string; // For display purposes
+  chatName?: string; // For display purposes
 }

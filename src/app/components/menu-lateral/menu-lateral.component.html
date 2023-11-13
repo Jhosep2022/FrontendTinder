@@ -1,6 +1,7 @@
-<div class="perfil">
-  <img src="assets/coss.jpg" alt="Jose Condori">
-  <h2>Coss Adriana</h2>
+<!-- menu-lateral.component.html -->
+<div class="perfil" (click)="goToProfile()">
+  <img src="assets/coss.jpg" alt="Jose Condori" style="cursor: pointer;">
+  <h2 style="cursor: pointer;">Coss Adriana</h2>
 </div>
 
 <div class="menu">
@@ -20,6 +21,6 @@
 
   <!-- Chat View -->
   <div *ngIf="view === 'Chat'" class="content">
-    <app-chat></app-chat>
+    <app-chat (chatSelected)="onChatSelected($event)"></app-chat>
   </div>
 </div>

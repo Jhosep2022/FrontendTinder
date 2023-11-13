@@ -12,7 +12,7 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  border: 3px solid white; /* Borde blanco para la imagen de perfil */
+  border: 3px solid white; 
 }
 
 .menu {

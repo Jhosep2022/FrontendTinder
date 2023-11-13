@@ -1,8 +1,10 @@
 <div class="app-container">
   <div class="sidebar">
-    <app-menu-lateral></app-menu-lateral>
+    <app-menu-lateral (profileSelected)="onViewChange($event)" (chatSelected)="onChatSelected($event)"></app-menu-lateral>
   </div>
-  <div class="profile-display">
-    <app-prifle-display></app-prifle-display>
+  <div class="content-display">
+    <app-profile *ngIf="currentView === 'profile'"></app-profile>
+    <app-prifle-display *ngIf="currentView === 'display'"></app-prifle-display>
+    <app-message *ngIf="currentView === 'chat'" [chat]="activeChat"></app-message>
   </div>
 </div>

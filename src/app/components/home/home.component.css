@@ -1,15 +1,18 @@
 .app-container {
-  display: flex; /* Define la estructura como flexible */
+  display: flex;
+  height: 100vh;
 }
 
 .sidebar {
-  flex: 0.5; /* Ocupará la mitad del espacio disponible */
-  max-width: 60%; /* Limita al 50% del ancho total */
-  min-width: 350px; /* Ancho mínimo, ajusta según tus necesidades */
-  overflow-y: auto; /* Barra de desplazamiento vertical en caso de contenido largo */
+  flex: 0 0 250px; 
+  min-width: 250px;
+  overflow-y: auto;
 }
 
-.profile-display {
-  flex: 1; /* Ocupará el espacio restante después de sidebar */
-  overflow-y: auto; /* Barra de desplazamiento vertical en caso de contenido largo */
+.content-display {
+  flex-grow: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
