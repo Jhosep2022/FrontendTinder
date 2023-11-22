@@ -28,6 +28,7 @@ import { RegisterComponent } from './components/register/register.component';
 // import { AuthGuard } from './guards/auth.guard';
 // import { initializeKeycloak } from './init/keycloak.init';
 // import { MatCardModule } from '@angular/material/card';
+import { MatchComponentComponent } from './components/match-component/match-component.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { RegisterComponent } from './components/register/register.component';
     MessageComponent,
     MenuLateralComponent,
     RegisterComponent,
+    MatchComponentComponent,
   ],
   imports: [
     BrowserModule,
