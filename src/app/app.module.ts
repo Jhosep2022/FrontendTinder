@@ -24,6 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MenuLateralComponent } from './components/menu-lateral/menu-lateral.component';
 import { RegisterComponent } from './components/register/register.component';
+import { MatchComponentComponent } from './components/match-component/match-component.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { RegisterComponent } from './components/register/register.component';
     MessageComponent,
     MenuLateralComponent,
     RegisterComponent,
+    MatchComponentComponent,
   ],
   imports: [
     BrowserModule,

@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { MenuLateralComponent } from './components/menu-lateral/menu-lateral.component';
 import { ChatComponent } from './components/chat/chat.component';
 import { MatchComponent } from './components/match/match.component';
-import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
