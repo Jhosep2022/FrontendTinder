@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -24,6 +24,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MenuLateralComponent } from './components/menu-lateral/menu-lateral.component';
 import { RegisterComponent } from './components/register/register.component';
+// import { KeycloakAngularModule } from "keycloak-angular";
+// import { AuthGuard } from './guards/auth.guard';
+// import { initializeKeycloak } from './init/keycloak.init';
+// import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -44,7 +48,6 @@ import { RegisterComponent } from './components/register/register.component';
     BrowserAnimationsModule,
     FirestoreModule,
     ReactiveFormsModule,
-    // Angular Material imports
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
@@ -53,9 +56,21 @@ import { RegisterComponent } from './components/register/register.component';
     MatMenuModule,
     MatListModule,
     MatAutocompleteModule,
-    MatDividerModule
+    MatDividerModule,
+    // KeycloakAngularModule,
+    // MatCardModule,
+
+
   ],
-  providers: [],
+  // providers: [
+  //   AuthGuard,
+  //   {
+  //     provide: APP_INITIALIZER,
+  //     useFactory: initializeKeycloak,
+  //     multi: true,
+  //     deps: [KeycloakAngularModule],
+  //   }
+  // ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
