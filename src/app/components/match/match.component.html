@@ -1,13 +1,5 @@
 <div class="match-container">
-
-  <!-- <div class="like-card">
-    <div class="like-count">
-      <span>7</span>
-    </div>
-    <p>7 Likes</p>
-    <img src="assets/coss.jpg" alt="Heart Icon" class="heart-icon">
-  </div> -->
-  <div class="match-container">
-    <app-match-component *ngFor="let item of items" [item]="item"></app-match-component>
+  <div *ngFor="let match of matches">
+    <app-match-component [item]="match"></app-match-component>
   </div>
 </div>

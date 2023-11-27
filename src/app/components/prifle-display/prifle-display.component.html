@@ -1,14 +1,22 @@
-<!-- Estructura básica del perfil -->
-<div class="profile">
-  <img src="assets/coss.jpg" alt="nombre-perfil">
+<div *ngIf="getCurrentProfile() as currentProfile" class="profile">
+  <img src="{{ currentProfile.photos}}" alt="Foto de {{ currentProfile.nickname }}" class="profile-photo">
   <div class="profile-info">
-    <h1>Nombre del Perfil</h1>
-    <p>Información adicional...</p>
-    <!-- Botones de interacción -->
-    <div class="profile-actions">
-      <button class="dislike-button"><i class="fas fa-times"></i></button>
-      <button class="like-button"><i class="fas fa-heart"></i></button>
-      <!-- Otros botones... -->
-    </div>
+    <h1>{{ currentProfile.nickname | titlecase }}</h1>
+    <p>{{ currentProfile.description }}</p>
+  </div>
+</div>
+
+<div class="profile-actions" *ngIf="getCurrentProfile()">
+  <button class="dislike-button" mat-icon-button (click)="onReact(false)">
+    <mat-icon>close</mat-icon>
+  </button>
+  <button class="like-button" mat-icon-button (click)="onReact(true)">
+    <mat-icon>check</mat-icon>
+  </button>
+</div>
+
+<div class="empty-card" *ngIf="!getCurrentProfile()">
+  <div *ngIf="!getCurrentProfile()" class="no-profiles">
+    <p>No hay más perfiles para mostrar.</p>
   </div>
 </div>

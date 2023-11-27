@@ -1,0 +1,20 @@
+<div class="screen">
+    <div class="register-container">
+        <h1>Quieres actualizar tu perfil?</h1>
+        <p>Cuentanos un poco mas de ti</p>
+        <form (ngSubmit)="onRegister()" >
+            <div class="form-group">
+                <input type="text" placeholder="Acerca de ti" [(ngModel)]="about" name="about">
+            </div>
+            <!-- photo upload -->
+            <p> Deseas cambiar tu foto de perfil?</p>
+            <div class="form-group">
+                <input type="file" placeholder="Foto" (change)="uploadPhoto($event)" name="foto">
+            </div>
+
+            <button type="submit" >Actualizar</button>
+        </form>
+
+    </div>
+</div>
+

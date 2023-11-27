@@ -1,12 +1,18 @@
-<div class="chat-container">
-  <div class="chat-sidebar">
-    <div class="user-list">
-      <div *ngFor="let chat of chats" class="user" (click)="setActiveChat(chat)">
-        <img [src]="chat.pic" alt="{{ chat.name }}" class="user-image">
-        <div class="user-details">
-          <h5>{{ chat.chatName || chat.name }}</h5>
-          <p *ngIf="chat.lastMessage">{{ chat.lastMessage }}</p>
-          <small *ngIf="chat.lastMessageDate">{{ chat.lastMessageDate | date: 'short' }}</small>
+<div *ngIf="chats.length === 0 && hasFinishedLoading"  class="no-chats">
+  <h3>No chats</h3>
+  <p>Start a new chat by clicking on the <i class="fa fa-plus"></i> button below.</p>
+</div>
+<div  *ngIf="hasFinishedLoading">
+  <div class="chat-container">
+    <div class="chat-sidebar">
+      <div class="user-list">
+        <div *ngFor="let chat of chats" class="user" (click)="setActiveChat(chat)">
+          <img [src]="chat.chatPic" alt="Pic" class="user-image">
+          <div class="user-details">
+            <h5>{{ chat.chatName | titlecase }}</h5>
+            <p *ngIf="chat.lastMessage">{{ chat.lastMessage }}</p>
+            <small *ngIf="chat.lastMessageDate">{{ chat.lastMessageDate | date: 'short' }}</small>
+          </div>
         </div>
       </div>
     </div>

@@ -1,8 +1,8 @@
-<div class="match-card">
+<div class="match-card" *ngIf="item">
   <div class="image-container">
-    <img [src]="item.imageUrl" alt="Match Image">
+    <img [src]="getProfileImageUrl(item)" alt="Match Image">
   </div>
   <div class="text-container">
-    <p>{{ item.text }}</p>
+    <p>Match con: {{ getProfileNickname(item) | titlecase }}</p>
   </div>
 </div>

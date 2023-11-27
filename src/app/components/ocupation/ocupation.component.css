@@ -1,0 +1,41 @@
+/* Estilos Generales */
+.container {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* Estilos para Formulario */
+form {
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  border: 2px solid #ff5860;
+  border-radius: 4px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #ff5860;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #e65055;
+}
+
+/* Estilos para Tabla */
+.mat-elevation-z8 {
+  box-shadow: none;
+  border: 1px solid #ddd;
+}
+
+

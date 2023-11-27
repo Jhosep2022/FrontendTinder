@@ -56,3 +56,11 @@
   font-size: 0.7em;
   color: #999;
 }
+
+.no-chats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #999;
+}

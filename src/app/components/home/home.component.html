@@ -1,10 +1,18 @@
 <div class="app-container">
-  <div class="sidebar">
-    <app-menu-lateral (profileSelected)="onViewChange($event)" (chatSelected)="onChatSelected($event)"></app-menu-lateral>
+  <div class="sidebar" *ngIf="selectedNickname">
+    <app-menu-lateral (viewChange)="onViewChange($event)" (chatSelected)="onChatSelected($event)" ></app-menu-lateral>
   </div>
-  <div class="content-display">
-    <app-profile *ngIf="currentView === 'profile'"></app-profile>
-    <app-prifle-display *ngIf="currentView === 'display'"></app-prifle-display>
-    <app-message *ngIf="currentView === 'chat'" [chat]="activeChat"></app-message>
+  <div class="content-display" [ngSwitch]="currentView" *ngIf="currentView">
+    <app-profile *ngSwitchCase="'profile'" (editProfile)="onEditProfile()"></app-profile>
+    <app-prifle-display *ngSwitchCase="'display'"></app-prifle-display>
+    <div *ngIf="isAdmin">
+      <app-ocupation *ngSwitchCase="'ocupation'"></app-ocupation>
+    </div>
+    <div *ngIf="!isAdmin">
+      <app-error *ngSwitchCase="'ocupation'"></app-error>
+    </div>
+    <app-message *ngSwitchCase="'chat'" [chat]="activeChat"></app-message>
+    <app-register-update *ngSwitchCase="'register'"></app-register-update>
+    <app-register *ngSwitchCase="'register-new'"></app-register>
   </div>
 </div>

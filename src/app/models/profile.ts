@@ -7,8 +7,9 @@ export class Profile {
   nickname: string;
   description: string;
   status: boolean;
+  photos: string;
 
-  constructor(profileId: number, peopleId: number, occupationId: number, wantId: number, preferenceId: number, nickname: string, description: string, status: boolean) {
+  constructor(profileId: number, peopleId: number, occupationId: number, wantId: number, preferenceId: number, nickname: string, description: string, status: boolean, photos: string) {
       this.profileId = profileId;
       this.peopleId = peopleId;
       this.occupationId = occupationId;
@@ -17,5 +18,6 @@ export class Profile {
       this.nickname = nickname;
       this.description = description;
       this.status = status;
+        this.photos = photos;
   }
 }

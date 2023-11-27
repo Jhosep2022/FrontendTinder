@@ -1,7 +1,9 @@
 <!-- menu-lateral.component.html -->
-<div class="perfil" (click)="goToProfile()">
-  <img src="assets/coss.jpg" alt="Jose Condori" style="cursor: pointer;">
-  <h2 style="cursor: pointer;">Coss Adriana</h2>
+<div class="perfil">
+  <img src="{{myProfilePicture}}" alt="." style="cursor: pointer;" (click)="emitViewChange('profile')">
+  <h2 style="cursor: pointer;" (click)="emitViewChange('profile')">{{firstName}} {{lastName}}</h2>
+  <mat-icon (click)="emitViewChange('home')">home</mat-icon>
+  <mat-icon (click)="emitViewChange('ocupation')">Ocupation</mat-icon>
 </div>
 
 <div class="menu">
@@ -13,14 +15,11 @@
             [ngClass]="{'active': view === 'Chat'}"
             (click)="view = 'Chat'">Chat</button>
   </div>
-
-  <!-- Match View -->
   <div *ngIf="view === 'Match'" class="content">
     <app-match></app-match>
   </div>
 
-  <!-- Chat View -->
   <div *ngIf="view === 'Chat'" class="content">
-    <app-chat (chatSelected)="onChatSelected($event)"></app-chat>
+    <app-chat (chatSelected)="chatSelected.emit($event)"></app-chat>
   </div>
 </div>

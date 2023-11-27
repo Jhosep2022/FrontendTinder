@@ -1,73 +1,107 @@
 .profile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 80%;
+  max-width: 400px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 60px auto;
+  position: relative;
+  overflow: visible;
+}
+
+.profile img {
+  width: 100%;
+  object-fit: cover;
+  height: 600px;
+  display: block;
+  border-radius: 20px;
 }
 
 .profile-info {
+  position: absolute;
+  bottom: 0px;
+  width: calc(100% - 20px);
+  left: 0px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
   text-align: center;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .profile-info h1 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.5rem; /* Adjust the size as needed */
+  margin-bottom: 0.5rem; /* Space below the h1 */
 }
 
 .profile-info p {
-  font-size: 1rem;
-  color: gray;
+  font-size: 1rem; /* Adjust the size as needed */
 }
 
 .profile-actions {
   display: flex;
   gap: 1rem;
-  margin-top: 1rem;
+  justify-content: center; /* Centers the buttons */
+  position: relative; /* Keep it relative */
+  margin-top: 20px; /* Space between the image and the buttons */
+  margin-left: auto; /* Center the button group horizontally */
+  margin-right: auto; /* Center the button group horizontally */
+  width: fit-content; /* Fit the content's width and allow centering */
 }
+
 
 .profile-actions button {
   padding: 0.5rem;
   border: none;
   border-radius: 50%;
-  font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  width: 50px;
-  height: 50px;
+  font-size: 1.5rem; /* Larger icons */
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 50px; /* Fixed width for buttons */
+  height: 50px; /* Fixed height for buttons */
 }
 
-.profile-actions button:first-child {
-  background-color: #ff4a4a;
-  color: white;
-
-  &:hover {
-    background-color: #e43838;
-  }
-
-  &:before {
-    content: '×'; /* Carácter de 'X' */
-    font-size: 1.5rem;
-  }
+.dislike-button {
+  background-color: #ff4a4a; /* Red background for dislike */
 }
 
-.profile-actions button:last-child {
-  background-color: #4aff4a;
-  color: white;
-
-  &:hover {
-    background-color: #38e438;
-  }
-
-  &:before {
-    content: '♥';
-    font-size: 1.5rem;
-  }
+.like-button {
+  background-color: #4aff4a; /* Green background for like */
 }
 
-img {
-  width: 80%;
-  height: 500px;
-  border-radius: 10%;
+.no-profiles {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+.dislike-button:hover {
+  background-color: #e43838; /* Darker red on hover for dislike */
+}
+
+.like-button:hover {
+  background-color: #38e438; /* Darker green on hover for like */
+}
+
+/* FontAwesome Icons */
+.dislike-button i::before {
+  content: '\f00d'; /* FontAwesome times icon */
+}
+
+.like-button i::before {
+  content: '\f004'; /* FontAwesome heart icon */
+}
+
+.empty-card {
+    width: 100%;
+    height: 600px;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

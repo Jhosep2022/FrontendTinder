@@ -1,14 +1,18 @@
 <div class="profile-container">
   <div class="profile-header">
-    <img src="assets/coss.jpg" alt="Nombre del Perfil" class="profile-pic">
+    <img src="{{ myProfilePicture }}" alt="profile picture" class="profile-pic">
     <div class="profile-info">
-      <h2>Jose Condori 23 <span class="verified-icon">✔</span></h2>
-      <button class="edit-profile-btn">Editar información (30 % completado)</button>
+      <h2> {{ firstName }} {{ lastName }} <span class="verified-icon">✔</span></h2>
+      <h2> {{ myProfile?.nickname | titlecase }} </h2>
+      <button class="edit-profile-btn" (click)="onEdit()">Editar Información </button>
     </div>
   </div>
   <div class="profile-content">
     <div class="profile-scroll">
-      <p>Información adicional...</p>
+      <p> {{ myProfile?.description }} </p>
     </div>
   </div>
 </div>
+
+<!--logout button -->
+<button class="logout-btn" (click)="onLogout()">Cerrar Sesión</button>

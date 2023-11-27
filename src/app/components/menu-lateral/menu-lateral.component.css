@@ -3,16 +3,27 @@
   align-items: center;
   gap: 20px;
   padding: 20px;
-  border-radius: 15px, 15px, 0, 0;
+  border-radius: 0;
   background: linear-gradient(to right, #ff0000, #ff0073);
   color: white;
+  position: relative;
+}
+
+.perfil mat-icon:hover {
+  color: #ff8552;
+}
+.perfil mat-icon {
+  font-size: 35px;
+  cursor: pointer;
+  margin-left: auto;
+  padding: 0 20px;
 }
 
 .perfil img {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  border: 3px solid white; 
+  border: 3px solid white;
 }
 
 .menu {

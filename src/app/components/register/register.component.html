@@ -1,1 +1,32 @@
-<p>register works!</p>
+<div class="screen">
+  <div class="register-container">
+    <h1>Faltan pocos pasos para registrarte</h1>
+    <p>Cuentanos un poco sobre ti</p>
+    <form (ngSubmit)="onRegister()" >
+      <div class="form-group">
+        <input type="text" placeholder="Acerca de ti" [(ngModel)]="about" name="about">
+      </div>
+
+      <div class="form-group">
+        <input type="number" placeholder="Edad" [(ngModel)]="age" name="age">
+      </div>
+
+      <div class="form-group">
+        <select [(ngModel)]="genero" name="genero">
+          <option value="" disabled selected>Genero</option>
+          <option value="Masculino">Masculino</option>
+          <option value="Femenino">Femenino</option>
+        </select>
+      </div>
+
+      <!-- photo upload -->
+      <div class="form-group">
+        <input type="file" placeholder="Foto" (change)="uploadPhoto($event)" name="foto">
+      </div>
+
+      <button type="submit" >Registrarme</button>
+    </form>
+
+  </div>
+</div>
+

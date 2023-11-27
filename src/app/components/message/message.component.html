@@ -1,17 +1,17 @@
 <!-- message.component.html -->
-<div class="container" *ngIf="chat">
+<div  class="container" *ngIf="chat">
   <div class="chat-window mat-elevation-z5">
     <div class="chat-header">
-      <img class="chat-avatar" [src]="chat.pic || 'assets/images/image-placeholder.png'" />
-      <span class="chat-name">{{ chat.name }}</span>
+      <img class="chat-avatar" [src]="chat.chatPic || 'assets/images/image-placeholder.png'" />
+      <span class="chat-name">{{ chat.chatName | uppercase }}</span>
     </div>
 
-    <div class="chat-body">
-      <ng-container *ngFor="let message of messages$ | async">
+    <div #chatContainer class="chat-body">
+      <ng-container *ngFor="let message of messages">
         <div class="message" [ngClass]="{'sent': isSentByCurrentUser(message), 'received': !isSentByCurrentUser(message)}">
           <div class="message-content">
-            <p class="message-text">{{ message.text }}</p>
-            <p class="message-date">{{ message.sentDate | date: 'short' }}</p>
+            <p class="message-text">{{ message.message }}</p>
+            <p class="message-date">{{ message.dateTime | date: 'short' }}</p>
           </div>
         </div>
       </ng-container>
@@ -19,7 +19,7 @@
 
     <div class="chat-footer">
       <mat-form-field class="full-width">
-        <input matInput placeholder="Write a message" [formControl]="messageControl" />
+        <input matInput placeholder="Escribe un mensaje" [formControl]="messageControl" />
       </mat-form-field>
       <button mat-icon-button (click)="sendMessage()">
         <mat-icon>send</mat-icon>

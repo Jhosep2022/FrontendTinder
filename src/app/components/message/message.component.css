@@ -54,6 +54,7 @@
   padding: 16px;
   flex-grow: 1; /* Let chat body take up remaining space */
   overflow-y: auto; /* Scrollable chat content */
+  height: 500px; /* Chat content height */
 }
 
 /* Message bubble styles */
